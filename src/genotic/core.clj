@@ -7,8 +7,7 @@
    (take length (repeat 0))))
 
 (defn generation []
-   (take 100 (repeatedly #(new-gene))))
-
+   (take 100 (repeatedly new-gene)))
 
 (defn fitness [gene]
   (count (filter #(= 1 %) gene)))
@@ -18,7 +17,7 @@
     (take n
       (reverse
         (sort-by
-          #(fitness %)
+          fitness
           generation)))))
 
 (defn mutate [g]
