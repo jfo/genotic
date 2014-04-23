@@ -23,7 +23,8 @@
 
 (defn mutate [g]
   (if (= (rand-int 100) 50)
-    (bit-flip g 0)))
+    (bit-flip g 0)
+    g))
 
 (defn mutate-gen [generation]
   (map #(map mutate %) generation))
