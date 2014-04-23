@@ -3,8 +3,8 @@
 (defn new-gene
   ([] (new-gene 50))
   ([length]
-   ; (take length (repeatedly #(rand-int 2)))))
-   (take length (repeat 0))))
+   ; (repeatedly length #(rand-int 2))))
+   (repeat length 0)))
 
 (defn generation []
    (take 100 (repeatedly new-gene)))
